@@ -19,6 +19,9 @@ export class HeadlinesComponent implements OnInit {
         await this.getIp();
         await this.getCountry();
         await this.getHeadlines();
+        setInterval(() => {
+            this.getHeadlines();
+        }, 60000);
         console.log(this.userip);
         console.log(this.usercountry);
         console.log(this.usercountrycode);

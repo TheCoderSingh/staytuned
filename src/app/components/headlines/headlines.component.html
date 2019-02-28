@@ -1,3 +1,108 @@
+<div id="settingssec" class="mt-5">
+    <div class="container">
+        <div id="location">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        <span>Current Location</span>
+                        <span *ngIf="changedcountry; else country2"
+                            >: {{ changedcountry }}
+                        </span>
+                        <ng-template #country2>
+                            <span>(detected): {{ usercountry }}</span>
+                        </ng-template>
+                        |
+                        <select (change)="onCountryChange($event.target.value)">
+                            <option selected>Select Location</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Bulgaria">Bulgaria</option>
+                            <option value="Canada">Canada</option>
+                            <option value="China">China</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Cuba">Cuba</option>
+                            <option value="Czech Republic"
+                                >Czech Republic</option
+                            >
+                            <option value="Egypt">Egypt</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Greece">Greece</option>
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="India">India</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Israel">Israel</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Latvia">Latvia</option>
+                            <option value="Lithuania">Lithuania</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Morocco">Morocco</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Nigeria">Nigeria</option>
+                            <option value="Norway">Norway</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="South Korea">South Korea</option>
+                            <option value="Sweden">Sweden</option>
+                            <option value="Switzerland">Switzerland</option>
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Thailand">Thailand</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="UAE">UAE</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="United Kingdom"
+                                >United Kingdom</option
+                            >
+                            <option value="United States">United States</option>
+                            <option value="Venuzuela">Venuzuela</option>
+                        </select>
+                    </p>
+                </div>
+            </div>
+            <div id="topic">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search for a topic"
+                                aria-label="Topic"
+                                aria-describedby="topicbtntxt"
+                            />
+                            <button
+                                class="input-group-append"
+                                type="submit"
+                                id="topicbtn"
+                            >
+                                <span class="input-group-text" id="topicbtntxt"
+                                    >Search News</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="headlines">
     <div class="container">
         <div id="headlineshead">
@@ -25,12 +130,7 @@
                                     {{ one_news["title"] }}
                                 </h5>
                                 <p class="card-text">
-                                    {{
-                                        one_news["description"].substring(
-                                            0,
-                                            100
-                                        )
-                                    }}
+                                    {{ one_news["description"] }}
                                 </p>
                             </div>
                             <div class="card-footer">

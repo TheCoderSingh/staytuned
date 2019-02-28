@@ -6,7 +6,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/common/header/header.component";
 import { HomeComponent } from "./components/views/home/home.component";
-import { SettingsComponent } from "./components/settings/settings.component";
 import { UseripService } from "./services/userip.service";
 import { HttpClientModule } from "@angular/common/http";
 import { HeadlinesComponent } from "./components/headlines/headlines.component";
@@ -16,11 +15,10 @@ import { HeadlinesComponent } from "./components/headlines/headlines.component";
         AppComponent,
         HeaderComponent,
         HomeComponent,
-        SettingsComponent,
         HeadlinesComponent
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-    providers: [UseripService, HeadlinesfetcherService],
+    providers: [UseripService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

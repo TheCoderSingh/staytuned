@@ -1,3 +1,4 @@
+import { HeadlinesfetcherService } from "./services/headlinesfetcher.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -8,7 +9,7 @@ import { HomeComponent } from "./components/views/home/home.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { UseripService } from "./services/userip.service";
 import { HttpClientModule } from "@angular/common/http";
-import { HeadlinesComponent } from './components/headlines/headlines.component';
+import { HeadlinesComponent } from "./components/headlines/headlines.component";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,7 @@ import { HeadlinesComponent } from './components/headlines/headlines.component';
         HeadlinesComponent
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-    providers: [UseripService],
+    providers: [UseripService, HeadlinesfetcherService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

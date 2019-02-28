@@ -1,5 +1,5 @@
-import { HeadlinesfetcherService } from "./../../services/headlinesfetcher.service";
 import { Component, OnInit } from "@angular/core";
+import { HeadlinesfetcherService } from "src/app/services/headlinesfetcher.service";
 
 @Component({
     selector: "app-headlines",
@@ -8,7 +8,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HeadlinesComponent implements OnInit {
     news;
-    // headines;
     constructor(private headlinesfetcherservice: HeadlinesfetcherService) {}
 
     async ngOnInit() {
@@ -17,11 +16,5 @@ export class HeadlinesComponent implements OnInit {
 
     async getHeadlines() {
         this.news = await this.headlinesfetcherservice.fetchHeadlines();
-        // console.log(this.headlines["articles"]["0"]);
-        // for (let i = 0; i < 10; i++) {
-        // console.log(this.news["articles"][i.toString()]["title"]);
-        // this.headlines += this.news["articles"][i.toString()]["title"];
-        // }
-        // console.log(this.news["title"]);
     }
 }

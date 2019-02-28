@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UseripService } from "./../../services/userip.service";
+import { HeadlinesfetcherService } from "src/app/services/headlinesfetcher.service";
 
 @Component({
     selector: "app-settings",

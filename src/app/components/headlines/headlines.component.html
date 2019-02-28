@@ -112,6 +112,9 @@
                 </div>
             </div>
         </div>
+        <div id="loading" *ngIf="news == null" class="text-center">
+            <p>Loading...</p>
+        </div>
         <div id="headlinesbody">
             <div class="row">
                 <div class="col-md-4" *ngFor="let one_news of news">

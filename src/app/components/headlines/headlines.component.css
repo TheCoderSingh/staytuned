@@ -3,3 +3,7 @@
     border: none;
     padding: 0;
 }
+
+#loading {
+    font-size: 64px;
+}

@@ -7,6 +7,8 @@ import { map } from "rxjs/operators";
 })
 export class UseripService {
     result;
+    ipaddress;
+    country;
     API_KEY = "f429b3296d8115a6ae890d89815ef5d18ec96a18b69da7efff06bd85";
     baseurl = "https://api.ipdata.co/";
 
@@ -16,12 +18,15 @@ export class UseripService {
         this.result = await this.http
             .get("http://api.ipify.org?format=json")
             .toPromise();
+        this.ipaddress = this.result["ip"];
         return this.result["ip"];
     }
 
-    getUserCountry(ipaddress) {
-        return this.http
-            .get(this.baseurl + ipaddress + "?api-key=" + this.API_KEY)
-            .pipe(map(data => data["country_name"] || {}));
+    async getUserCountry(userip) {
+        this.result = await this.http
+            .get(this.baseurl + userip + "?api-key=" + this.API_KEY)
+            .toPromise();
+        this.country = this.result["country_name"];
+        return this.result["country_name"];
     }
 }

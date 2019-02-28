@@ -1,4 +1,3 @@
-import { HeadlinesfetcherService } from "src/app/services/headlinesfetcher.service";
 import { Component, OnInit } from "@angular/core";
 import { UseripService } from "src/app/services/userip.service";
 

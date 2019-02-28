@@ -10,13 +10,11 @@ export class SettingsComponent implements OnInit {
     userip;
     constructor(private useripservice: UseripService) {}
 
-    ngOnInit() {
-        this.getIp();
+    async ngOnInit() {
+        await this.getIp();
     }
 
-    getIp() {
-        this.useripservice.getUserIp().subscribe(data => {
-            this.userip = this.useripservice.getUserIp();
-        });
+    async getIp() {
+        this.userip = await this.useripservice.getUserIp();
     }
 }

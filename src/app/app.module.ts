@@ -8,13 +8,15 @@ import { HomeComponent } from "./components/views/home/home.component";
 import { UseripService } from "./services/userip.service";
 import { HttpClientModule } from "@angular/common/http";
 import { HeadlinesComponent } from "./components/headlines/headlines.component";
+import { FooterComponent } from './components/common/footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         HomeComponent,
-        HeadlinesComponent
+        HeadlinesComponent,
+        FooterComponent
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [UseripService],

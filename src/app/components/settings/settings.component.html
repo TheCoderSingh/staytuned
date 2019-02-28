@@ -4,10 +4,15 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <p>
-                        Current Location(detected): {{ usercountry }} |
-                        <select
-                            (change)="getChangedCountry($event.target.value)"
-                        >
+                        <span>Current Location</span>
+                        <span *ngIf="changedcountry; else country2"
+                            >: {{ changedcountry }}
+                        </span>
+                        <ng-template #country2>
+                            <span>(detected): {{ usercountry }}</span>
+                        </ng-template>
+                        |
+                        <select (change)="onCountryChange($event.target.value)">
                             <option selected>Select Location</option>
                             <option value="Canada">Canada</option>
                             <option value="India">India</option>

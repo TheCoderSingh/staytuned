@@ -27,7 +27,13 @@ export class SettingsComponent implements OnInit {
         this.usercountry = await this.useripservice.getUserCountry(this.userip);
     }
 
-    getChangedCountry(country) {
+    onCountryChange(country) {
+        this.changedcountry = country;
+        if (this.changedcountry == "Select Location") {
+            this.changedcountry = null;
+        } else {
+            this.changedcountry = country;
+        }
         console.log(country);
     }
 }

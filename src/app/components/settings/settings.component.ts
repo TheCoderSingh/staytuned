@@ -9,6 +9,7 @@ import { UseripService } from "./../../services/userip.service";
 export class SettingsComponent implements OnInit {
     userip;
     usercountry;
+    changedcountry;
     constructor(private useripservice: UseripService) {}
 
     async ngOnInit() {
@@ -24,5 +25,9 @@ export class SettingsComponent implements OnInit {
 
     async getCountry() {
         this.usercountry = await this.useripservice.getUserCountry(this.userip);
+    }
+
+    getChangedCountry(country) {
+        console.log(country);
     }
 }

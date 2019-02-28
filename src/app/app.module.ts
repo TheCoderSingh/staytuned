@@ -8,13 +8,15 @@ import { HomeComponent } from "./components/views/home/home.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { UseripService } from "./services/userip.service";
 import { HttpClientModule } from "@angular/common/http";
+import { HeadlinesComponent } from './components/headlines/headlines.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         HomeComponent,
-        SettingsComponent
+        SettingsComponent,
+        HeadlinesComponent
     ],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [UseripService],
